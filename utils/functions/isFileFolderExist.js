@@ -6,7 +6,7 @@ import fs from "node:fs";
  * @param {String} filePath - path to file or folder
  * @return {Boolean} exist or not
  */
-export function isFileExists(filePath) {
+export function isFileExist(filePath) {
   try {
     fs.accessSync(filePath, fs.constants.F_OK);
     return true;
@@ -25,7 +25,7 @@ export function isFileExists(filePath) {
  * @returns {Promise<void>} A Promise that resolves when the directory is created or already exists.
  */
 export function isFolderExist(path) {
-  if (isFileExists(path) === false) {
+  if (isFileExist(path) === false) {
     fs.mkdir(path, { recursive: true }, (err) => {
       if (err) {
         console.error(`Error creating directory: ${err}`);

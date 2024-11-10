@@ -1,7 +1,7 @@
 "use strict";
 
 import { from, pugContent, scssContent, jsContent } from "./utils/variables.js";
-import { isFileExists, isFolderExist } from "./utils/functions/isFileFolderExist.js";
+import { isFileExist, isFolderExist } from "./utils/functions/isFileFolderExist.js";
 import { writeFile } from "./utils/functions/writeFile.js";
 import { uniqueArray } from "./utils/functions/uniqueArray.js";
 
@@ -59,7 +59,7 @@ if (process.argv.length < 3) {
         break;
     }
 
-    if (isFileExists(filePath) === false && extension !== "img" && extension !== "assets" && extension !== "symbols") {
+    if (isFileExist(filePath) === false && extension !== "img" && extension !== "assets" && extension !== "symbols") {
       writeFile(filePath, fileContent, fileCreateMsg);
     } else if (extension !== "img" && extension !== "assets" && extension !== "symbols") {
       console.log(`[MSG] File NOT created (already exists): ${filePath}`);
