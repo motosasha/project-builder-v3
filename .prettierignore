@@ -1,0 +1,11 @@
+node_modules/
+design/
+
+__MACOSX
+
+.gitattributes
+.editorconfig
+.gitignore
+.prettierrc.json
+.prettierignore
+package.json
