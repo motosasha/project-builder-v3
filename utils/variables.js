@@ -1,4 +1,4 @@
-const prefix = "shadow/structure/"; // ""
+const prefix = "temp/structure/"; // ""
 
 export const from = {
   root: "src",
@@ -13,18 +13,17 @@ export const from = {
   },
 };
 
-export const pugContent = (blockName) => `//- Все примеси в этом файле должны начинаться c имени блока (${blockName})
-//- Упоминание имени блока в классах обязательно, без этого он не попадёт
-//- в сборку
+export const pugContent = (blockName) => `//- All mixins in this file must be scoped to the block name (${blockName})
+//- Class selectors must be scoped to the block name for inclusion in the build
 
 mixin ${blockName}(mods)
 
-  //- Принимает:
-  //-   mods    {string} - список модификаторов
-  //- Вызов:
+  //- Takes:
+  //-   mods    {string} - a comma-separated list of modifiers
+  //- Usage:
         +${blockName}("some-mod")
 
-  //- список модификаторов
+  //- Modifiers list
   -
     var allMods = "";
     if (typeof (mods) !== "undefined" && mods) {

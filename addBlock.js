@@ -1,9 +1,9 @@
 "use strict";
 
 import { from, pugContent, scssContent, jsContent } from "./utils/variables.js";
-import { isFileExists, isFolderExist } from "./utils/isFileExist.js";
-import { writeFile } from "./utils/writeFile.js";
-import { uniqueArray } from "./utils/uniqueArray.js";
+import { isFileExists, isFolderExist } from "./utils/functions/isFileFolderExist.js";
+import { writeFile } from "./utils/functions/writeFile.js";
+import { uniqueArray } from "./utils/functions/uniqueArray.js";
 
 /**
  * Generates files for a new block.
