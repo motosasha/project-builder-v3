@@ -4,7 +4,7 @@ import fs from "node:fs";
  * Checking the existence of a file or folder
  *
  * @param {String} filePath - path to file or folder
- * @return {Boolean} exist or not
+ * @return {Boolean}          exist or not
  */
 export function isFileExist(filePath) {
   try {
@@ -21,8 +21,8 @@ export function isFileExist(filePath) {
 /**
  * Checks if a directory exists and creates it if it doesn't.
  *
- * @param {string} path - The path to the directory to check or create.
- * @returns {Promise<void>} A Promise that resolves when the directory is created or already exists.
+ * @param {string} path     - The path to the directory to check or create.
+ * @returns {Promise<void>}   A Promise that resolves when the directory is created or already exists.
  */
 export function isFolderExist(path) {
   if (isFileExist(path) === false) {

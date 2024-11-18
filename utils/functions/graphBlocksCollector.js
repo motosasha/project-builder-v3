@@ -1,14 +1,18 @@
 "use strict";
 
 import { config } from "../config.js";
+
 import chalk from "chalk";
 
 config.blocksFromHtml = [...config.alwaysAddBlocks];
 
 /**
- * Traversing the found classes and adding the class to the graph
- * @param  {Object} classes an array of classes
- * @param  {Object} file    file buffer
+ * Collects block names from a given file and updates a graph data structure.
+
+ * This function iterates through a list of class names, adds them to a block list, and updates a graph data structure. It also checks if the block is already in a specific list and adds it if necessary.
+
+ * @param {Object} file       - An object representing the file being processed.
+ * @param {string[]} classes  - An array of class names extracted from the file.
  */
 export function graphBlocksCollector(file, classes) {
   const blocksList = [];

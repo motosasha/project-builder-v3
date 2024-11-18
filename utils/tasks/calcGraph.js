@@ -7,9 +7,7 @@ import through2 from "through2";
 import chalk from "chalk";
 
 import { config } from "../config.js";
-import { classCollector } from "../functions/classCollector.js";
-import { graphBlocksCollector } from "../functions/graphBlocksCollector.js";
-import { graphTemplatesCollector } from "../functions/graphTemplatesCollector.js";
+import { makeGraph } from "../functions/makeGraph.js";
 
 const { from, graph, isDebugging } = config;
 
@@ -47,33 +45,4 @@ export function calcGraph() {
       console.log(config.blocksFromHtml);
     })
     .pipe(plumber.stop());
-}
-
-function makeGraph(file, enc, cb) {
-  if (file === null) {
-    cb(null, file);
-  }
-
-  // Checking whether the file being processed is an exception
-  let processThisFile = true;
-  let fileContent;
-
-  config.notGetBlocks.forEach(function (excludedBlock) {
-    if (file.stem.trim() === excludedBlock.trim()) processThisFile = false;
-  });
-
-  // The file is not excluded from processing, let's go...
-  if (processThisFile) {
-    fileContent = file.contents.toString();
-    const fileClasses = classCollector(file, fileContent);
-
-    // Traversing the found classes and adding the class to the graph
-    graphBlocksCollector(file, fileClasses);
-
-    // Add templates to graph
-    if (file.path.includes(`${from.pages}`)) {
-      graphTemplatesCollector(file, fileContent);
-    }
-  }
-  cb();
 }

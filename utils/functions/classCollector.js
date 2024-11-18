@@ -7,10 +7,13 @@ import { regExps } from "../variables.js";
 import { isFileExist } from "./isFileFolderExist.js";
 
 /**
- * Collecting class names from file contents
- * @param  {Object} file file buffer
- * @param  {String} fileContent file content string
- * @return {Object}      an array with classnames
+ * Extracts class names from file content.
+ *
+ * This function parses the given files content, identifies class names, and filters them based on certain criteria.
+ *
+ * @param {string} file         - The file buffer.
+ * @param {string} fileContent  - The content of the HTML file.
+ * @returns {Set<string>}         A set of extracted class names.
  */
 export function classCollector(file, fileContent) {
   const classCollection = new Set();
