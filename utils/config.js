@@ -22,6 +22,8 @@ export const config = {
   blocksFromHtml: [],
 
   //* FLAGS
+  // library
+  isLibraryBuild: process.env.BUILD_LIBRARY || false,
   // debugging
   isDebugging: true,
   // todo separates flags config?

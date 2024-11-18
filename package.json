@@ -16,9 +16,11 @@
     "lint-fix:js": "eslint **/*.js --fix",
     "prettier:js": "prettier --check '**/*.js'",
     "prettier-fix:js": "prettier --write '**/*.js'",
+    "start": "gulp",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "calcGraph": "gulp dev:graph"
+    "calcGraph": "gulp dev:graph",
+    "pugMixin": "gulp compile:pugMixin"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.9",

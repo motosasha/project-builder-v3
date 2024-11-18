@@ -3,6 +3,10 @@
 import { config } from "../config.js";
 import { regExps } from "../variables.js";
 
+const {
+  graph: { templates },
+} = config;
+
 /**
  * Collects template file dependencies.
 
@@ -17,11 +21,11 @@ export function graphTemplatesCollector(file, fileContent) {
 
   if (templateExtendLine) {
     templateFileName = templateExtendLine.toString();
-    if (config.graph.templates[templateFileName]) {
-      config.graph.templates[templateFileName].add(file.path);
+    if (templates[templateFileName]) {
+      templates[templateFileName].add(file.path);
     } else {
-      config.graph.templates[templateFileName] = new Set();
-      config.graph.templates[templateFileName].add(file.path);
+      templates[templateFileName] = new Set();
+      templates[templateFileName].add(file.path);
     }
   }
 }

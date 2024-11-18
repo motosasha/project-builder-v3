@@ -4,7 +4,13 @@ import { config } from "../config.js";
 
 import chalk from "chalk";
 
-config.blocksFromHtml = [...config.alwaysAddBlocks];
+let {
+  graph: { blocks },
+  notGetBlocks,
+  alwaysAddBlocks,
+  isDebugging,
+} = config;
+config.blocksFromHtml = [...alwaysAddBlocks];
 
 /**
  * Collects block names from a given file and updates a graph data structure.
@@ -20,13 +26,13 @@ export function graphBlocksCollector(file, classes) {
   for (let item of classes) {
     blocksList.push(item);
 
-    if (!config.notGetBlocks.includes(item)) {
+    if (!notGetBlocks.includes(item)) {
       // add a node and connection to the graph
-      if (config.graph.blocks[item]) {
-        config.graph.blocks[item].add(file.path);
+      if (blocks[item]) {
+        blocks[item].add(file.path);
       } else {
-        config.graph.blocks[item] = new Set();
-        config.graph.blocks[item].add(file.path);
+        blocks[item] = new Set();
+        blocks[item].add(file.path);
       }
 
       // is the block already exist?
@@ -36,7 +42,7 @@ export function graphBlocksCollector(file, classes) {
     }
   }
 
-  if (config.isDebugging && blocksList.length) {
+  if (isDebugging && blocksList.length) {
     console.log(
       `[  ${chalk.yellow("info")}  ] Used HTML blocks (${blocksList.length}) on ${file.relative}: ${blocksList.join(", ")}`,
     );

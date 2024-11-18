@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Returns a new array containing only unique elements from the original array.
  * Uses a `Set` to remove duplicates.

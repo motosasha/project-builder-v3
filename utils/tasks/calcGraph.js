@@ -9,11 +9,11 @@ import chalk from "chalk";
 import { config } from "../config.js";
 import { makeGraph } from "../functions/makeGraph.js";
 
-const { from, graph, isDebugging } = config;
+const { from, graph, blocksFromHtml, isDebugging } = config;
 
 export function calcGraph() {
   // todo check this reset
-  // config.blocksFromHtml = [];
+  // blocksFromHtml = [];
 
   if (isDebugging) {
     if (Object.keys(graph.blocks).length && Object.keys(graph.templates)) {
@@ -41,8 +41,8 @@ export function calcGraph() {
     )
     .pipe(through2({ objectMode: true, allowHalfOpen: false }, makeGraph))
     .on("end", () => {
-      if (config.isDebugging) console.log(chalk.bgYellow("[grphAftr]"), graph);
-      console.log(config.blocksFromHtml);
+      if (isDebugging) console.log(chalk.bgYellow("[grphAftr]"), graph);
+      console.log(blocksFromHtml);
     })
     .pipe(plumber.stop());
 }

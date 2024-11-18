@@ -5,7 +5,7 @@ import { classCollector } from "./classCollector.js";
 import { graphBlocksCollector } from "./graphBlocksCollector.js";
 import { graphTemplatesCollector } from "./graphTemplatesCollector.js";
 
-const { from } = config;
+const { from, notGetBlocks } = config;
 
 /**
  * Processes a file, extracts class names and template dependencies, and updates the graph data structure.
@@ -25,7 +25,7 @@ export function makeGraph(file, enc, cb) {
   let processThisFile = true;
   let fileContent;
 
-  config.notGetBlocks.forEach(function (excludedBlock) {
+  notGetBlocks.forEach(function (excludedBlock) {
     if (file.stem.trim() === excludedBlock.trim()) processThisFile = false;
   });
 
