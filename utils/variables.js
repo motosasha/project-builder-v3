@@ -1,4 +1,4 @@
-const prefix = "temp/structure/"; // ""
+const prefix = "temp/structure-test/"; // ""
 
 export const from = {
   root: "src",
@@ -11,6 +11,14 @@ export const from = {
   get blocks() {
     return `${this.root}/${prefix}blocks`;
   },
+};
+
+export const regExps = {
+  classRegexp:
+    /(?<!(\/\/|=|!=|[({]|include|extends).*)(\.|\B\+)([\w-]+(?:__[\w-]+)*(?:--[\w-]+)*)|(class=["']([\w\s-]+)["'])/g,
+  // todo old classRegexp: /(?<!(\/\/|=|!=|[({]|include|extends).*)((\.|\B\+)[a-zA-Z0-9-_]+)+?|(class=["']?([\w\-_ ]+)+["']?)/g,
+  blockRegexp: /[^\\/]+(?=\.[^.])/g,
+  templateRegexp: /(?<=extends.*(templates|pug)\/).*.pug/g,
 };
 
 export const pugContent = (blockName) => `//- All mixins in this file must be scoped to the block name (${blockName})
