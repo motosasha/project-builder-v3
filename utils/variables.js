@@ -13,10 +13,15 @@ export const from = {
   },
 };
 
+export const to = {
+  root: "build",
+};
+
 export const regExps = {
   classRegexp:
     /(?<!(\/\/|=|!=|[({]|include|extends).*)(\.|\B\+)([\w-]+(?:__[\w-]+)*(?:--[\w-]+)*)|(class=["']([\w\s-]+)["'])/g,
-  // todo old classRegexp: /(?<!(\/\/|=|!=|[({]|include|extends).*)((\.|\B\+)[a-zA-Z0-9-_]+)+?|(class=["']?([\w\-_ ]+)+["']?)/g,
+  // todo old
+  // classRegexp: /(?<!(\/\/|=|!=|[({]|include|extends).*)((\.|\B\+)[a-zA-Z0-9-_]+)+?|(class=["']?([\w\-_ ]+)+["']?)/g,
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*(templates|pug)\/).*.pug/g,
 };

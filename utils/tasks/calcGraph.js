@@ -41,8 +41,10 @@ export function calcGraph() {
     )
     .pipe(through2({ objectMode: true, allowHalfOpen: false }, makeGraph))
     .on("end", () => {
-      if (isDebugging) console.log(chalk.bgYellow("[grphAftr]"), graph);
-      console.log(blocksFromHtml);
+      if (isDebugging) {
+        console.log(chalk.bgYellow("[grphAftr]"), graph);
+        console.log(chalk.bgBlue("[blocsLst]"), blocksFromHtml);
+      }
     })
     .pipe(plumber.stop());
 }
