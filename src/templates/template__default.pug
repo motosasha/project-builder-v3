@@ -1,0 +1,37 @@
+//- Basic page template
+
+include mixins.pug
+
+-
+  var isMainPage = false,
+      pageTitle = "page title",
+      metaDescription = "description",
+      metaKeywords = "keywords",
+      isProjectNav,
+      isProjectLibrary,
+      isFontsPreload,
+      isOpenGraph
+
+block variables
+
+doctype html
+html(class="no-js page", lang="ru")
+  include ./template__default-head.pug
+
+  body.page__inner
+    noscript.page__noscript У вас отключен JavaScript. Это пугает.
+
+    if isProjectNav
+      include ./template__project-nav.pug
+
+    .page__header
+      +header
+    .page__main
+      block content
+        .content-filler content-filler
+    .page__footer
+      +footer
+
+    block templates
+
+    block scripts
