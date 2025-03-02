@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="76.8" y="76.8" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="76.8" y="153.6" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="76.8" y="230.4" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="76.8" y="307.2" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="76.8" y="384" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="153.6" y="76.8" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="153.6" y="153.6" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="153.6" y="307.2" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="153.6" y="384" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="230.4" y="76.8" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="230.4" y="153.6" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="230.4" y="230.4" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="230.4" y="384" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="307.2" y="76.8" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="307.2" y="230.4" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="307.2" y="307.2" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="307.2" y="384" width="51.2" height="51.2" rx="12" class="adaptive-fill"/>
+    <rect x="384" y="76.8" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="384" y="153.6" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="384" y="230.4" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="384" y="307.2" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <rect x="384" y="384" width="51.2" height="51.2" rx="12" fill="#10B981"/>
+    <path d="M21.7673 487.796V22.3418H100.313V41.9782H43.2219V468.16H100.313V487.796H21.7673Z" class="adaptive-fill"/>
+    <path d="M495.847 22.3418V487.796H417.302V468.16H474.393V41.9782H417.302V22.3418H495.847Z" class="adaptive-fill"/>
+  <style>
+    .adaptive-fill { fill: #09090b; }
+    @media (prefers-color-scheme: dark) {
+      .adaptive-fill { fill: #fafafa; }
+    }
+  </style>
+</svg>
