@@ -11,16 +11,34 @@
   "type": "module",
   "node version": "18+",
   "scripts": {
-    "dev": "vite",
+    "lint:pug": "pug-lint -r node_modules/puglint-stylish src/**/*.pug",
+    "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "deploy": "NODE_ENV=deploy vite build && gh-pages -d build",
-    "deployPreview": "NODE_ENV=deploy vite build && vite preview"
+    "deployPreview": "NODE_ENV=deploy vite build && vite preview",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
+    "@htmlacademy/editorconfig-cli": "^3.0.0",
     "@vituum/vite-plugin-pug": "^1.1.0",
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "pug-lint": "^2.7.0",
+    "puglint-stylish": "^1.1.0",
     "vite": "^6.2.0",
+    "vite-plugin-inspect": "^11.0.0",
     "vituum": "^1.1.1"
+  },
+  "lint-staged": {
+    "src/**/*.{md,pug,js}": "editorconfig-cli",
+    "src/**/*.pug": "pug-lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
