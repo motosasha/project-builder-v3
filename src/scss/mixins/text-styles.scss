@@ -1,0 +1,7 @@
+@use "@scss/breakpoints";
+
+@mixin body($weight: 400) {
+  font-weight: $weight;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}

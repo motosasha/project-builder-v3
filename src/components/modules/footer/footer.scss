@@ -1,0 +1,12 @@
+@use "../../../scss/breakpoints";
+@use "../../../scss/mixins/text-styles";
+
+.footer {
+  $block-name: &; // #{$block-name}__element
+
+  border-top: 1px solid var(--border-primary);
+
+  &__inner {
+    padding: 16px 0;
+  }
+}

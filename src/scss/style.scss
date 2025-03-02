@@ -1,0 +1,22 @@
+// base
+@use "sanitize.css/sanitize.css";
+@use "sanitize.css/forms.css";
+@use "sanitize.css/assets.css";
+@use "sanitize.css/typography.css";
+@use "sanitize.css/reduce-motion.css";
+@use "@scss/variables.scss";
+@use "@scss/reboot.scss";
+// @use "@scss/mixins.scss";
+// @use "@scss/typography.scss";
+// @use "@scss/vendor.scss";
+@use "@scss/fonts.scss";
+// @use "@scss/animations.scss";
+// @use "somePackage/dist/somePackage.css"; // for "node_modules/somePackage/dist/somePackage.css",
+
+// core
+@use "@core/container/container";
+@use "@core/page/page";
+
+// modules
+@use "../components/modules/header/header";
+@use "../components/modules/footer/footer";

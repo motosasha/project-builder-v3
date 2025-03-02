@@ -16,13 +16,13 @@ block variables
 
 doctype html
 html(class="no-js page", lang="ru")
-  include ./template__default-head.pug
+  include template__default-head.pug
 
   body.page__inner
     noscript.page__noscript У вас отключен JavaScript. Это пугает.
 
     if isProjectNav
-      include ./template__project-nav.pug
+      include template__project-nav.pug
 
     .page__header
       +header

@@ -1,0 +1,24 @@
+@use "../../../scss/breakpoints";
+@use "../../../scss/mixins/text-styles";
+
+.page {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  &__header {
+    flex: 0 0 auto;
+  }
+
+  &__main {
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+  }
+}
