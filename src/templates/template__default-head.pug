@@ -3,6 +3,9 @@ head
   meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1")
   meta(http-equiv="X-UA-Compatible", content="ie=edge")
 
+  if (process.env.MODE === "deploy")
+    base(href= projectName)
+
   meta(name="format-detection", content="telephone=no")
   meta(name="format-detection", content="date=no")
   meta(name="format-detection", content="address=no")
@@ -10,6 +13,21 @@ head
   meta(name="google", content="notranslate")
   meta(name="HandheldFriendly", content="true")
   meta(name="robots", content="index, follow")
+
+  //- favicon
+  link(rel="icon", sizes="32x32", href="./img/favicon/favicon.ico")
+  link(rel="icon", type="image/svg+xml", href="./img/favicon/favicon.svg")
+  link(rel="apple-touch-icon", href="./img/favicon/apple-touch-icon.png")
+  link(rel="manifest", href="./img/favicon/site.webmanifest")
+  meta(name="theme-color", content="#000000")
+
+  //- open graph
+  if isOpenGraph
+    meta(property="og:type", content="website")
+    meta(property="og:title", content="og:title")
+    meta(property="og:image", content= "./img/favicon/apple-touch-icon-180x180.png")
+    meta(property="og:description", content="og:description")
+    meta(property="vk:image", content= "./img/favicon/logo-vk.png")
 
   title= pageTitle
 

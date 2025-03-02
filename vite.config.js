@@ -6,6 +6,10 @@ import vituum from "vituum";
 import pug from "@vituum/vite-plugin-pug";
 
 export default defineConfig({
+  base: process.env.MODE === "deploy" ? config.projectName : '/',
+  build: {
+    outDir: "build",
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL("./src", import.meta.url))
@@ -15,7 +19,7 @@ export default defineConfig({
     vituum(),
     pug({
       root: "./src",
-      data: ["src/data/**/*.json", "src/pages/pages.json"],
+      data: ["./src/data/**/*.json"],
       globals: config
     }),
   ],
